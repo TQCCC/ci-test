@@ -9,4 +9,4 @@ echo "准备脚本执行结束"
 echo "开始执行启动脚本"
 
 chmod 777 startup.sh
-nohup startup.sh $1 &
+sh startup.sh
