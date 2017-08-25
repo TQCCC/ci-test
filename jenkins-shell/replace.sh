@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 file_jar=~/.jenkins/workspace/${JOB_NAME}/target/${1}
 echo "开始备份: " ${1}
+if [ -z "${JAVA_APP_DIR}" ]; then
+    echo "无JAVA项目路径，退出"
+    exit 0
+fi
 
 if [ ! -d "${JAVA_APP_DIR}/backup" ]; then
     mkdir -p ${JAVA_APP_DIR}/backup
