@@ -8,10 +8,9 @@ fi
 if [ ! -d "${JAVA_APP_DIR}" ]; then
   mkdir -p "${JAVA_APP_DIR}"        #没有就生成
 fi
-echo "开始执行项目脚本" ${1}            #参数：生成包名
-sh ${JENKINS_SHELL_DIR}/stop.sh ${1}
+echo "开始执行项目脚本" ${JOB_NAME}
+sh ${JENKINS_SHELL_DIR}/stop.sh ${1}        #参数：生成包名
 sh ${JENKINS_SHELL_DIR}/replace.sh ${1}
-echo "开始执行启动脚本"
 chmod 777 ${JENKINS_SHELL_DIR}/startup.sh
 sh ${JENKINS_SHELL_DIR}/startup.sh ${1}
 
