@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-echo "开始备份: " ${1}
-if [ -z "${1}" ]; then
-    echo "缺少参数，退出"
+echo "开始备份: " ${JAR_NAME}
+if [ -z "${JAR_NAME}" ]||[ ! "${JAR_NAME##*.}"x = "jar"x ]; then
+    echo "缺少jar包，退出"
     exit 0
 fi
 if [ -z "${JAVA_APP_DIR}" ]; then
@@ -9,17 +9,16 @@ if [ -z "${JAVA_APP_DIR}" ]; then
     exit 0
 fi
 
-
-file_jar=~/.jenkins/workspace/${JOB_NAME}/target/${1}
+jar_path=~/.jenkins/workspace/${JOB_NAME}/target/${JAR_NAME}
 if [ ! -d "${JAVA_APP_DIR}/backup" ]; then
     mkdir -p ${JAVA_APP_DIR}/backup
 fi
 
-if [ -f "${JAVA_APP_DIR}/${1}" ]; then
-    mv  ${JAVA_APP_DIR}/${1} ${JAVA_APP_DIR}/backup/${1}.`date +%Y%m%d%H%M%S`
+if [ -f "${JAVA_APP_DIR}/${JAR_NAME}" ]; then
+    mv  ${JAVA_APP_DIR}/${JAR_NAME} ${JAVA_APP_DIR}/backup/${JAR_NAME}.`date +%Y%m%d%H%M%S`
 fi
 
-echo "开始移进新jar包：" ${1}
-if [ -f "${file_jar}" ]; then
-    cp ${file_jar} ${JAVA_APP_DIR}
+if [ -f "${jar_path}" ]; then
+    echo "开始移进新jar包：" ${JAR_NAME}
+    cp ${jar_path} ${JAVA_APP_DIR}
 fi
