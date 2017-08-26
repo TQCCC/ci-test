@@ -12,6 +12,10 @@ fi
 JAR_NAME=`ls ~/.jenkins/workspace/${JOB_NAME}/target/ | grep .jar$`
 echo "找到构建完成的jar包：" ${JAR_NAME}
 
+echo "JAVA_APP_DIR: " ${JAVA_APP_DIR}
+echo "JENKINS_SHELL_DIR: " ${JENKINS_SHELL_DIR}
+echo "JAR_NAME: " ${JAR_NAME}
+
 export JAVA_APP_DIR
 export JENKINS_SHELL_DIR
 export JAR_NAME
