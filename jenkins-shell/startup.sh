@@ -8,9 +8,11 @@ if [ -z "${JAVA_APP_DIR}" ]; then
     echo "无JAVA项目路径，退出"
     exit 0
 fi
-chmod 777 ${JAVA_APP_DIR}/${JAR_NAME}
-echo "jar包: " ${JAR_NAME}
 
+chmod 777 ${JAVA_APP_DIR}/${JAR_NAME}
+echo "执行jar包: " ${JAVA_APP_DIR}/${JAR_NAME}
 BUILD_ID=dontKillMe
 nohup java -jar ${JAVA_APP_DIR}/${JAR_NAME} >> ${JAVA_APP_DIR}/${JOB_NAME}-log.log 2>&1 &
 echo "**********************${JAR_NAME} started*************************"
+
+# TODO: 判断端口是否被占用，lsof -i:xxx
