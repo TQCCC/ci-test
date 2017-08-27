@@ -12,7 +12,7 @@ fi
 chmod 777 ${JAVA_APP_DIR}/${JAR_NAME}
 echo "执行jar包: " ${JAVA_APP_DIR}/${JAR_NAME}
 BUILD_ID=dontKillMe
-nohup java -jar ${JAVA_APP_DIR}/${JAR_NAME} >> ${JAVA_APP_DIR}/${JOB_NAME}-log.log 2>&1 &
+nohup java -jar ${JAVA_APP_DIR}/${JAR_NAME} > /dev/null 2>&1 &
 echo "**********************${JAR_NAME} started*************************"
 
 # TODO: 判断端口是否被占用，lsof -i:xxx
