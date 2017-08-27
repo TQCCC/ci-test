@@ -5,7 +5,10 @@ if [ -z "${JAR_NAME}" ]||[ ! "${JAR_NAME##*.}"x = "jar"x ]; then
     exit 0
 fi
 
-pid=`ps -ef | grep "java -jar ${JAVA_APP_DIR}/${JAR_NAME}" | grep -v grep | awk '{print $2}'`
+# 输出查找到的进程
+ps -ef | grep "${JAR_NAME}" | grep -v grep
+
+pid=`ps -ef | grep "${JAR_NAME}" | grep -v grep | awk '{print $2}'`
 if [ -n "${pid}" ]; then
     echo "停止运行中项目: " ${JAR_NAME}
     echo "强制停止pid：" ${pid}
