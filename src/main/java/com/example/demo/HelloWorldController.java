@@ -11,6 +11,6 @@ public class HelloWorldController {
 
     @RequestMapping("/")
     public String index(){
-        return "I'm jenkins test!";
+        return "{\"message\":\"I'm jenkins test!\"}";
     }
 }
