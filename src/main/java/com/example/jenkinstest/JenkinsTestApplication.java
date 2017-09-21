@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration;
 @SpringBootApplication
 @Configuration
 @ComponentScan("com.example.jenkinstest")
-public class DemoApplication {
+public class JenkinsTestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(JenkinsTestApplication.class, args);
 	}
 }
