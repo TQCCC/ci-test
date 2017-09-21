@@ -20,7 +20,7 @@ export JAVA_APP_DIR
 export JENKINS_SHELL_DIR
 export JAR_NAME
 
-echo "开始执行项目脚本" ${JOB_NAME}
+echo "开始执行所有脚本"
 sh ${JENKINS_SHELL_DIR}/stop.sh
 sh ${JENKINS_SHELL_DIR}/replace.sh
 sh ${JENKINS_SHELL_DIR}/startup.sh

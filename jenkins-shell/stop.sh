@@ -6,6 +6,7 @@ if [ -z "${JAR_NAME}" ]||[ ! "${JAR_NAME##*.}"x = "jar"x ]; then
 fi
 
 # 输出查找到的进程
+echo "查找进程："
 jps -l | grep "${JAR_NAME}" | grep -v grep
 
 pid=`jps -l | grep "${JAR_NAME}" | grep -v grep | awk '{print $1}'`

@@ -16,3 +16,4 @@ nohup java -jar ${JAVA_APP_DIR}/${JAR_NAME} > /dev/null 2>&1 &
 echo "**********************${JAR_NAME} started*************************"
 
 # TODO: 判断端口是否被占用，lsof -i:xxx
+# TODO: 发布到其它服务器

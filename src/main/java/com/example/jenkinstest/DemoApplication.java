@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.jenkinstest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
 @Configuration
-@ComponentScan("com.example.demo")
+@ComponentScan("com.example.jenkinstest")
 public class DemoApplication {
 
 	public static void main(String[] args) {
