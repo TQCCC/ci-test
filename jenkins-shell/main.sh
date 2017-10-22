@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "==================================================="
 if [ -z "${JENKINS_SHELL_DIR}" ]; then
     JENKINS_SHELL_DIR=/var/www/jenkins-shell  # 默认脚本位置
 fi
@@ -15,12 +16,17 @@ echo "找到构建完成的jar包：" ${JAR_NAME}
 echo "JAVA_APP_DIR: " ${JAVA_APP_DIR}
 echo "JENKINS_SHELL_DIR: " ${JENKINS_SHELL_DIR}
 echo "JAR_NAME: " ${JAR_NAME}
+echo "BRANCH: " ${GIT_BRANCH}
 
 export JAVA_APP_DIR
 export JENKINS_SHELL_DIR
 export JAR_NAME
 
-echo "开始执行所有脚本"
+echo "==================================================="
 sh ${JENKINS_SHELL_DIR}/stop.sh
+echo "==================================================="
 sh ${JENKINS_SHELL_DIR}/replace.sh
+echo "==================================================="
 sh ${JENKINS_SHELL_DIR}/startup.sh
+echo "==================================================="
+

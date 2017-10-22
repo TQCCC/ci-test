@@ -11,7 +11,6 @@ jps -l | grep "${JAR_NAME}" | grep -v grep
 
 pid=`jps -l | grep "${JAR_NAME}" | grep -v grep | awk '{print $1}'`
 if [ -n "${pid}" ]; then
-    echo "停止运行中项目: " ${JAR_NAME}
-    echo "强制停止pid：" ${pid}
+    echo "停止运行中项目: " ${JAR_NAME} ", PID: " ${pid}
     kill -9 ${pid}
 fi
