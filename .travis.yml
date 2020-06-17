@@ -1,2 +1,17 @@
 language: java
+
 jdk: openjdk8
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+
+script:
+  - mvn clean package -DskipTests=true
+
+after_success:
+  - echo '构建成功了！！！after_success'
+
+branches:
+  only:
+    - master
