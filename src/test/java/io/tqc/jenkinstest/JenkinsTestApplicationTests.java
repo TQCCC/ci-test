@@ -1,4 +1,4 @@
-package com.example.jenkinstest;
+package io.tqc.jenkinstest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
