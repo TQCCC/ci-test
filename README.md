@@ -1,6 +1,6 @@
 # jenkins-test
 
-[![Build Status](https://www.travis-ci.org/TQCCC/jenkins-test.svg?branch=master)](https://www.travis-ci.org/TQCCC/jenkins-test)
+[![Build Status](https://www.travis-ci.org/TQCCC/ci-test.svg?branch=master)](https://www.travis-ci.org/TQCCC/ci-test)
 
 **jenkins 必要插件如下:**
 
