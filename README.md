@@ -1,11 +1,11 @@
 # jenkins-test
 
+[![Build Status](https://www.travis-ci.org/TQCCC/jenkins-test.svg?branch=master)](https://www.travis-ci.org/TQCCC/jenkins-test)
 
-**jenkins必要插件如下:**
+**jenkins 必要插件如下:**
 
-Maven Integration plugin <br>
+Maven Integration plugin  
 Publish Over SSH
-
 
 **选择分支发布插件：**
 
