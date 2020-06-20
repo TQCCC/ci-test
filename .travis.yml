@@ -8,12 +8,8 @@ cache:
 
 
 install:
-  - mvn clean package -DskipTests=true
-
-script:
-  - echo '============script period!=============='
+  - mvn clean package
 
 
-after_success:
-  - echo '构建成功了！！！after_success'
+
 
